@@ -2,6 +2,11 @@ jQuery(function($){
 	/*
 	 * Select/Upload image(s) event
 	 */
+	$(document).ready(function(){
+		if(!$('img.true_pre_image').attr('src')){
+			$('#image_placeholder').css('display', 'block');
+		}
+	});
 	$('body').on('click', '.upload_image_button', function(e){
 		e.preventDefault();
  
@@ -20,16 +25,8 @@ jQuery(function($){
 		}).on('select', function() { // it also has "open" and "close" events 
 			var attachment = custom_uploader.state().get('selection').first().toJSON();
 			$(button).removeClass('button').html('<img class="true_pre_image" src="' + attachment.url + '" style="max-width:95%;display:block;" />').next().val(attachment.id).next().show();
-			/* if you sen multiple to true, here is some code for getting the image IDs
-			var attachments = frame.state().get('selection'),
-			    attachment_ids = new Array(),
-			    i = 0;
-			attachments.each(function(attachment) {
- 				attachment_ids[i] = attachment['id'];
-				console.log( attachment );
-				i++;
-			});
-			*/
+			$('#header_image').val($('.true_pre_image').attr('src'));
+			$('#image_placeholder').css('display', 'none');
 		})
 		.open();
 	});
@@ -39,18 +36,19 @@ jQuery(function($){
 	 */
 	$('body').on('click', '.remove_image_button', function(){
 		$(this).hide().prev().val('').prev().addClass('button').html('Upload image');
+		$('#image_placeholder').css('display', 'block');
 		return false;
 	});
 
-	$('input[type=submit]').click(function(e) {
-		var data = 
+	$('form#update-theme-options').on('submit', function(e) {
+		var data = $(this).serializeArray();
 	    e.preventDefault();
 	    $.ajax({
 	         type: 'POST',
 	         url: '../wp-content/themes/custom/Ajax.php',
-	         data: 'action=newbid&id=".$post->ID."',
+	         data: data,
 	         success: function(msg){
-			    $('#vehicle-value-box".$post->ID."').html(msg+',00€');
+			    
 		    }
 		});
 	});

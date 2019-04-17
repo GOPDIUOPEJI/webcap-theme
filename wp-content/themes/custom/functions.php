@@ -25,6 +25,12 @@ function the_copyright() {
 	echo date('Y') . " All Rights Reserved";
 }
 
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+// add_action('wp_print_styles', 'theme_name_scripts'); // можно использовать этот хук он более поздний
+function theme_name_scripts() {
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+}
+
 function include_script() {
 	/*
 	 * I recommend to add additional conditions just to not to load the scipts on each page
@@ -39,6 +45,8 @@ function include_script() {
 }
  
 add_action( 'admin_enqueue_scripts', 'include_script' );
+
+/* Customizer */
 
 // add_action('customize_register', function($customizer){
 //     $customizer->add_section(
@@ -81,42 +89,31 @@ function my_page_capability( $capability ) {
 
 
 function theme_options_form() {
-    /* Not sure about this global var */
-    //global $_nav_menu_placeholder;
-    //$_nav_menu_placeholder = ( 0 > $_nav_menu_placeholder ) ? intval($_nav_menu_placeholder) - 1 : -1;?>
+?>
     <h1><?= get_admin_page_title(); ?></h1>
-    <h2>Header options</h2>
 
 	<form id="update-theme-options" method="POST">
 		<h2>Header options</h2>
-        <!-- <p id="menu-item-custom-box">
-            <label class="howto" for="header_image">
-                <span><?php _e('URL'); ?></span>
-                <input id="custom-menu-item-custom-box" name="header_image" type="file" class="code menu-item-textbox" />
-            </label>
-        </p> -->
     <?php 
     $image = 'Upload image';
 	$image_size = 'full'; // it would be better to use thumbnail size here (150x150 or so)
 	$display = 'none'; // display state ot the "Remove image" button
- 
-	if( $image_attributes = wp_get_attachment_image_src( $value, $image_size ) ) {
- 
-		// $image_attributes[0] - image URL
-		// $image_attributes[1] - image width
-		// $image_attributes[2] - image height
- 
-		$image = '"<img src="' . $image_attributes[0] . '" style="max-width:95%;display:block;" />';
+	$placeholder = '<img id="image_placeholder" src="https://www.weareavp.com/wp-content/uploads/2017/07/Header-Image-Placeholder.jpg" style="max-height: 200px; max-width: 90%; display:none; margin-bottom: 20px" />';
+	if(get_option('header_image')){
+		$image = '<img class="true_pre_image" src="' . get_option('header_image') . '" style="max-width:95%;display:block;" />';
 		$display = 'inline-block';
+	} else {
+		$button = 'button';
+	}
  
-	} 
  	?>
 	<div>
-		<a href="#" class="upload_image_button"><?= $image ?></a>
-		<input type="hidden" name="' . $name . '" id="' . $name . '" value="' . $value . '" />
+		<?= $placeholder ?>
+		<a href="#" style="margin-bottom: 10px;" class="upload_image_button <?= $button ?>"><?= $image ?></a>
+		<input id="header_image" type="hidden" name="header_image" id="<?= $name ?>" value="<?= $value ?>" />
 		<a href="#" class="remove_image_button" style="display:inline-block;display: <?= $display ?>">Remove image</a>
 	</div>
-	<input type="submit" value="Update" />
+	<input type="submit" class="button" value="Update" />
     </form> 
     <?php
 }

@@ -13,7 +13,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<header class="header" style="background: url(<?= get_theme_mod('img-upload', '#ccc'); ?>)">
+	<header class="header" style="background-image: url(<?= get_option('header_image', '#ccc'); ?>)">
 		<div class="container">
 			<div class="row">
 				<div class="col logo-block">

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section id="primary" class="content-area">
-	<div class="content">
+	<div class="container">
 		<div class="row">
 			<main id="main" class="col-12 col-lg-9 site-main">
 
@@ -10,7 +10,7 @@
 
 						// get_template_part( 'template-parts/content/content', 'page' );
 						?>
-						<div class="title"><?php the_title(); ?></div>
+						<div class="title"><h1><?php the_title(); ?></h1></div>
 						<div class="content"><?php the_content(); ?></div> 
 
 						<?php
