@@ -1,0 +1,403 @@
+/*   
+Theme Name: Custom
+Theme URI: webcap.com
+Description: Эта тема создана в качестве тестового задания
+Author: paul
+Author URI: paulpleshko
+Template: 
+Version: 1.1
+.
+Развёрнутое описание темы/Лицензия-если-нужно.
+.
+*/
+
+body {
+	font-family: 'Oswald', sans-serif;
+	box-sizing: content-box;
+	color: #202221;
+}
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: unset;
+	color: unset;
+}
+
+.container{
+	max-width: 1440px;
+	padding: 0 20px;
+	padding-top: 30px;
+}
+
+.container .row {
+	width: 100%;
+}
+
+header {
+	height: 100px;
+	display: flex;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+header .row .col {
+	display: flex;
+	align-items: flex-end;
+}
+
+header .row .col:first-child {
+	text-align: left;
+}
+
+header .row .col:last-child {
+	text-align: right;
+}
+
+header h2, header h3, header h4 {
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+}
+
+header div {
+	width: 100%;
+}
+
+header .menu .menu-title h4 {
+	font-family: inherit;
+	line-height: 25px;
+	text-align: right;
+	font-style: normal;
+	font-weight: bold;
+}
+
+header .logo h2 {
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	font-size: 48px;
+}
+
+header .menu {
+	display: flex;
+}
+
+header .burger-menu:hover {
+	cursor: pointer;
+}
+
+header .burger-menu {
+	position: relative;
+	padding: 0 15px;
+	width: 60px;
+}
+
+header .burger-menu span {
+	position: absolute;
+	display: block;
+	border: 1px solid #202221;
+}
+
+header .burger-menu span:first-child {
+	bottom: 22px;
+    left: 15px;
+	width: 30px;
+}
+
+header .burger-menu span:last-child {
+    bottom: 15px;
+	margin-top: 7px;
+	width: 21.43px;
+}
+
+footer {
+    padding-bottom: 20px;
+    height: 140px;
+}
+
+footer .container {
+	display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+}
+
+footer .socials {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 20px;
+}
+
+footer .nav-menu {
+	display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: right;
+    flex-direction: column;
+}
+
+footer .nav-menu div {
+	height: 100%;
+}
+
+footer .nav-menu ul {
+	margin-bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+footer .nav-menu ul li {
+	list-style-type: none;
+}
+
+ul#menu-menu {
+	padding-left: 20px;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+ul#menu-menu li{
+	display: inline;
+	text-transform: uppercase;
+	color: #E0E0E0;
+}
+
+ul#menu-menu li.current_page_item {
+	color: #202221;
+}
+
+
+ul#menu-menu li:last-child {
+	padding-right: 0;
+}
+
+footer .status-bar {
+	width: 100%;
+	display: flex;
+}
+
+footer .status-bar span.bold-bar {
+	display: block;
+	width: 50%;
+	height: 4px;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+}
+
+footer .status-bar span.thin-bar {
+	margin-top: 1px;
+	width: 50%;
+	display: block;
+	width: 50%;
+	height: 2px;
+	border-top: 1px solid #E0E0E0;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+footer .socials img{
+	height: 20px;
+	max-width: 25px;
+}
+
+footer .socials .tw img {
+	height: 25px;
+	width: 25px;
+}
+
+footer .contact-block {
+	width: 100%;
+    border-top: 2px solid;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .contact-block a {
+	line-height: 0;
+    height: auto;
+	display: block;
+}
+
+footer .contact {
+	padding-left: 20px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	width: 50px;
+}
+
+footer .container .row {
+	width: 100%;
+}
+
+footer .container .row .col {
+	display: flex;
+    flex-direction: row;
+	padding: 0;
+}
+
+footer .col.large-block {
+	justify-content: space-between;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 62px;
+	text-transform: uppercase;
+}
+
+body.page-subscribe .entry-content {
+	max-width: 320px;
+}
+
+.content-area {
+	height: 40vh;
+}
+
+.content-area main, .content-area article, .content-area div{
+	height: 100%;
+}
+
+.content-area .row .col-12 {
+	display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+}
+
+.content-area .content .title {
+	margin-bottom: 10px;
+}
+
+.content-area .content {
+	height: auto;
+}
+
+.content-area .content div {
+	height: auto;
+}
+
+.content-area .content p {
+	color: #7A7E7C;
+	font-size: 20px;
+}
+
+body.page-subscribe .content-area .wpcf7 input{
+	max-width: 255px;
+}
+
+body.page-subscribe .content-area .wpcf7-submit {
+	margin-top: 20px;
+	border: none;
+	background: #202221;
+    color: #fff;
+	width: 100%;
+}
+
+.wpcf7-form p {
+	margin: 20px 0;
+}
+
+.wpcf7 label {
+	margin-bottom: 0;
+}
+
+.wpcf7 input[type="email"] {
+	border: none;
+    border-bottom: 2px solid;
+}
+
+.wpcf7 input {
+	padding: 10px 0;
+	outline: none;
+}
+
+.wpcf7 input::placeholder{
+	color: #A1A1A1;
+}
+
+body.page-subscribe .container .img-block{
+	max-width: 600px;
+	position: relative;
+	overflow: hidden;
+}
+
+body.page-subscribe .container .img-block img {
+	margin-top: -130px;
+	margin-left: -300px;
+}
+
+.widget-column {
+	padding-top: 8px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.widget-column .widget_calendar {
+	list-style-type: none;
+    width: 150px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+	footer .container .large-block {
+		justify-content: flex-end;
+	}
+
+	footer .container .large-block .nav-menu {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+
+	.content-area {
+		height: auto;
+	}
+
+	.widget-column {
+		justify-content: flex-start;
+	}
+
+	header .row {
+		margin: 0;
+	}
+
+	header .row .col {
+		align-items: center;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	body.page-subscribe .content-area .img-block img{
+		width: 400px;
+	    height: 300px;
+	    margin-top: -20px;
+    	margin-left: -70px
+	}
+}
+
+@media only screen and (max-width: 460px) {
+
+}
+
+@media only screen and (max-height: 800px) {
+	body.page-subscribe .content-area {
+		min-height: 600px;
+	}
+}
